@@ -7,15 +7,13 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        // Menu para o usuário escolher a ação
         System.out.println("Escolha uma opção:");
         System.out.println("1. Decodificar uma palavra");
         System.out.println("2. Fechar programa");
         int opcao = scanner.nextInt();
-        scanner.nextLine(); // Consumir a nova linha
+        scanner.nextLine(); 
 
         if (opcao == 1) {
-            // Decodificar uma palavra
             System.out.print("Digite uma palavra: ");
             String palavra = scanner.nextLine().toUpperCase();
 
