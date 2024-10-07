@@ -3,7 +3,6 @@ import java.util.HashMap;
 class ConversorCodigoMorse {
     HashMap<Character, String> mapaMorse = new HashMap<>();
 
-    // Inicializa o mapeamento de caracteres para código Morse
     public ConversorCodigoMorse() {
         mapaMorse.put('A', ".-");
         mapaMorse.put('B', "-...");
@@ -33,7 +32,6 @@ class ConversorCodigoMorse {
         mapaMorse.put('Z', "--..");
     }
 
-    // Método para obter o código Morse de um caractere
     public String obterCodigoMorse(char c) {
         return mapaMorse.getOrDefault(c, "Caractere inválido");
     }
