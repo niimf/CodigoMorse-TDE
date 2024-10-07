@@ -14,36 +14,31 @@ public class Main {
         int opcao = scanner.nextInt();
         scanner.nextLine(); // Consumir a nova linha
 
-        switch (opcao) {
-            case 1:
-                // Decodificar uma palavra
-                System.out.print("Digite uma palavra: ");
-                String palavra = scanner.nextLine().toUpperCase();
+        if (opcao == 1) {
+            // Decodificar uma palavra
+            System.out.print("Digite uma palavra: ");
+            String palavra = scanner.nextLine().toUpperCase();
 
-                System.out.println("Inserindo na árvore:");
-                for (char c : palavra.toCharArray()) {
-                    String codigoMorse = conversorMorse.obterCodigoMorse(c);
-                    if (!codigoMorse.equals("Caractere inválido")) {
-                        System.out.println(c + ": " + codigoMorse);
-                        arvore.inserir(c, codigoMorse);
-                    }
+            System.out.println("Inserindo na árvore:");
+            for (char c : palavra.toCharArray()) {
+                String codigoMorse = conversorMorse.obterCodigoMorse(c);
+                if (!codigoMorse.equals("Caractere inválido")) {
+                    System.out.println(c + ": " + codigoMorse);
+                    arvore.inserir(c, codigoMorse);
                 }
+            }
 
-                System.out.println("\nÁrvore Binária de Busca:");
-                arvore.imprimirArvore();
-                break;
-
-            case 2:
-                // Decodificar um código Morse
-                System.out.print("Digite UM código Morse: ");
-                String codigoMorse = scanner.nextLine();
-                char resultado = arvore.decodificar(codigoMorse);
-                System.out.println("Caractere decodificado: " + resultado);
-                break;
-
-            default:
-                System.out.println("Opção inválida.");
-                break;
+            System.out.println("\nÁrvore Binária de Busca:");
+            arvore.imprimirArvore();
+        } else if (opcao == 2) {
+            // Decodificar um código Morse
+            System.out.print("Digite UM código Morse: ");
+            String codigoMorse = scanner.nextLine();
+            char resultado = arvore.decodificar(codigoMorse);
+            System.out.println("Caractere decodificado: " + resultado);
+        } else {
+            // Opção inválida
+            System.out.println("Opção inválida.");
         }
 
         scanner.close();
