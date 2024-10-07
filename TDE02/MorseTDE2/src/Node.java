@@ -1,6 +1,6 @@
 public class Node {
     char valor;
-    boolean folha; // Indica se o nó contém um valor final
+    boolean folha; 
     Node esquerda, direita;
 
     public Node(char valor, boolean folha) {
