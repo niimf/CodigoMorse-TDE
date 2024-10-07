@@ -10,7 +10,7 @@ public class Main {
         // Menu para o usuário escolher a ação
         System.out.println("Escolha uma opção:");
         System.out.println("1. Decodificar uma palavra");
-        System.out.println("2. Decodificar um código Morse");
+        System.out.println("2. Fechar programa");
         int opcao = scanner.nextInt();
         scanner.nextLine(); // Consumir a nova linha
 
@@ -30,17 +30,13 @@ public class Main {
 
             System.out.println("\nÁrvore Binária de Busca:");
             arvore.imprimirArvore();
-        } else if (opcao == 2) {
-            // Decodificar um código Morse
-            System.out.print("Digite UM código Morse: ");
-            String codigoMorse = scanner.nextLine();
-            char resultado = arvore.decodificar(codigoMorse);
-            System.out.println("Caractere decodificado: " + resultado);
-        } else {
-            // Opção inválida
+
+        }else if (opcao == 2) {
+            scanner.close();
+        }else{
             System.out.println("Opção inválida.");
+
         }
 
-        scanner.close();
     }
 }
